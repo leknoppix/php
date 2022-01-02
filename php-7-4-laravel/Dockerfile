@@ -22,7 +22,7 @@ RUN docker-php-ext-install mysqli pdo_mysql
 RUN apt-get update && apt-get install -y libmagickwand-dev --no-install-recommends && pecl install imagick && docker-php-ext-enable imagick
 
 # Composer
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer && chmod +x /usr/bin/composer 
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 # Laravel Cli
 
