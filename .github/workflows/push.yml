@@ -7,21 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        phpversion:
-          [
-            -7-4-simple,
-            -7-4-complete,
-            -7-4-laravel,
-            -7-4-symfony,
-            -8-0-3-simple,
-            -8-0-3-complete,
-            -8-0-3-laravel,
-            -8-0-3-symfony,
-            -latest-simple,
-            -latest-complete,
-            -latest-laravel,
-            -latest-symfony,
-          ]
+        phpversion: [-7.4, -8.0.3-simple, -latest]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
