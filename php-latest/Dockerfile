@@ -18,7 +18,7 @@ RUN docker-php-ext-enable redis apcu
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-ADD ./php.ini /usr/local/etc/php/conf.d/
+ADD ./php-latest/php.ini /usr/local/etc/php/conf.d/
 
 RUN rm -rf /var/lib/apt/lists/*
 
