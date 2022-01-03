@@ -13,4 +13,4 @@
 - pdo
 - pdo_pgsql
 - pdo_mysql
-- 7z
+- p7zip

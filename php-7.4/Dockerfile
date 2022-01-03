@@ -7,16 +7,18 @@ RUN apt-get update && apt-get install -y \
     git \
     libzip-dev \
     libicu-dev \
-    7z \
+    p7zip-full \
     libmagickwand-dev --no-install-recommends
 
-RUN docker-php-ext-install pdo zip intl opcache mysqli pdo_mysql apcu imagick
+RUN docker-php-ext-install pdo zip intl opcache mysqli pdo_mysql
 
-RUN pecl install apcu && pecl install imagick redis
+RUN pecl install apcu imagick redis
+
+RUN docker-php-ext-enable redis apcu
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-ADD ./php-7.4/php.ini /usr/local/etc/php/conf.d/
+ADD ./php.ini /usr/local/etc/php/conf.d/
 
 RUN rm -rf /var/lib/apt/lists/*
 
