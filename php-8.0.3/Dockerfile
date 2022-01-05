@@ -27,6 +27,8 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash \
 
 RUN rm -rf /var/lib/apt/lists/*
 
+USER 1000:985
+
 WORKDIR /var/www
 
 EXPOSE 9000

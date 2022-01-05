@@ -18,7 +18,7 @@ RUN docker-php-ext-enable redis apcu
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-ADD ./php-7.4/php.ini /usr/local/etc/php/conf.d/
+ADD ./php.ini /usr/local/etc/php/conf.d/
 
 RUN wget https://get.symfony.com/cli/installer -O - | bash \
     && mv /root/.symfony/bin/symfony /usr/local/bin/symfony \
@@ -26,6 +26,8 @@ RUN wget https://get.symfony.com/cli/installer -O - | bash \
     && git config --global user.name "your name"
 
 RUN rm -rf /var/lib/apt/lists/*
+
+USER 1000:985
 
 WORKDIR /var/www
 
