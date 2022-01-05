@@ -1,4 +1,4 @@
-[![Publication Docker image leknoppix/php multiarch arm64 v7/arm v6/arm amd64](https://github.com/leknoppix/php/actions/workflows/push.yml/badge.svg)](https://github.com/leknoppix/php/actions/workflows/push.yml)
+[![Publication Docker image](https://github.com/leknoppix/php/actions/workflows/push.yml/badge.svg)](https://github.com/leknoppix/php/actions/workflows/push.yml)
 
 ## Outils
 
