@@ -1,4 +1,4 @@
-name: Publication Docker image leknoppix/php multiarch arm64 v7/arm v6/arm amd64
+name: Publication Docker image
 on:
   push:
     branches: [main]
