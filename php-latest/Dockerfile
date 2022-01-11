@@ -1,6 +1,7 @@
 FROM php:latest
 
 ENV PHP_SECURITY_CHECHER_VERSION=1.0.0
+ENV COMPOSER_ALLOW_SUPERUSER 0
 
 RUN apt-get update && apt-get install -y \
     wget \
