@@ -9,9 +9,10 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libicu-dev \
     p7zip-full \
+    libpng-dev libjpeg-dev libfreetype6-dev \
     libmagickwand-dev --no-install-recommends
 
-RUN docker-php-ext-install pdo zip intl opcache mysqli pdo_mysql
+RUN docker-php-ext-install pdo zip intl opcache mysqli pdo_mysql gd
 
 RUN pecl install apcu imagick redis
 
