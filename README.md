@@ -16,6 +16,7 @@
 - pdo_pgsql
 - pdo_mysql
 - p7zip
+- gd
 
 ## Utilisation
 
