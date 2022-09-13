@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     libicu-dev \
     p7zip-full \
     libpng-dev libjpeg-dev libfreetype6-dev \
+    mariadb-client\
     libmagickwand-dev --no-install-recommends
 
 RUN docker-php-ext-install pdo zip intl opcache mysqli pdo_mysql gd

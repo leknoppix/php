@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libicu-dev \
     p7zip-full \
+    mariadb-client\
     libpng-dev libjpeg-dev libfreetype6-dev \
     libmagickwand-dev --no-install-recommends
 
