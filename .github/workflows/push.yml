@@ -39,7 +39,7 @@ jobs:
           context: ./
           file: ./php${{ matrix.phpversion }}/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
-          platforms: ${{ matrix.architecture }
+          platforms: ${{ matrix.architecture }}
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/php:php${{ matrix.phpversion }}
           cache-from: type=local,src=/tmp/.buildx-cache
