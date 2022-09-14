@@ -8,6 +8,8 @@ jobs:
     strategy:
       matrix:
         phpversion: [-7.4, -8.0.3, -latest]
+        architecture:
+          [linux/386, linux/amd64, linux/arm/v6, linux/arm/v7, linux/arm64]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -37,7 +39,7 @@ jobs:
           context: ./
           file: ./php${{ matrix.phpversion }}/Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
-          platforms: linux/386, linux/amd64, linux/arm/v6, linux/arm/v7, linux/arm64
+          platforms: ${{ matrix.architecture }
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/php:php${{ matrix.phpversion }}
           cache-from: type=local,src=/tmp/.buildx-cache

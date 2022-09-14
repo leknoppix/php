@@ -36,7 +36,7 @@ ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/do
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd apcu bcmath exif gettext imagick intl ldap mcrypt \
-    mongodb mysqli opcache pdo_mysql redis soap sockets zip
+    mysqli opcache pdo_mysql redis soap sockets zip
 
 RUN apt-get autoremove --purge -y && apt-get autoclean -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
@@ -45,9 +45,7 @@ RUN apt-get autoremove --purge -y && apt-get autoclean -y && apt-get clean -y \
 
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-ADD ./php-latest/php.ini /usr/local/etc/php/conf.d/
-
-RUN rm -rf /var/lib/apt/lists/*
+ADD ./php-8.0.3/php.ini /usr/local/etc/php/conf.d/
 
 WORKDIR /var/www
 
