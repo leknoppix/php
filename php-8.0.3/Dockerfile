@@ -39,7 +39,6 @@ RUN apt-get update && apt-get upgrade -y \
     && docker-php-ext-install -j$(nproc) imap \
     && docker-php-ext-configure intl \
     && docker-php-ext-install -j$(nproc) intl \
-    && docker-php-ext-configure ldap --with-libdir=lib/x86_64-linux-gnu/ \
     && docker-php-ext-install ldap \
     && pecl install mcrypt \
     && docker-php-ext-enable mcrypt \
