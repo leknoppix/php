@@ -32,8 +32,6 @@ RUN apt-get update && apt-get upgrade -y \
     zlib1g-dev \
     mariadb-client \
     && docker-php-ext-configure gd \
-    --with-freetype=/usr/include/ \
-    --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j$(nproc) gd \
     && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install -j$(nproc) imap \
