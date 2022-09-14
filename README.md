@@ -34,18 +34,3 @@ docker run --rm -v $(pwd):/var/www leknoppix/php:php-7.4 composer create-project
 cd name_project
 docker run --rm -v $(pwd):/var/www -p 80:8000 leknoppix/php:php-latest php artisan serve --host 0.0.0.0
 ```
-
-### Symfony
-
-#### Création du projet
-
-```
-docker run --rm -v $(pwd):/var/www leknoppix/php:php-7.4 symfony new name_project --full
-```
-
-#### Ouvrir le serveur interne
-
-```
-cd name_project
-docker run --rm -v $(pwd):/var/www -p 80:8000 leknoppix/php:php-7.4 symfony server:start (-d option)
-```
