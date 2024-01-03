@@ -1,4 +1,4 @@
-name: Publication Docker image
+name: Publication Docker image Php
 on:
   push:
     branches: [main]
