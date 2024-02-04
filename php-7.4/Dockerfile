@@ -35,7 +35,7 @@ RUN apt-get update && apt-get upgrade -y \
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions gd apcu bcmath exif gettext imagick \
+    install-php-extensions gd apcu bcmath exif gettext imagick pcntl \
     intl ldap mcrypt mysqli opcache pdo_mysql redis soap sockets zip
 
 RUN apt-get autoremove --purge -y && apt-get autoclean -y && apt-get clean -y \
