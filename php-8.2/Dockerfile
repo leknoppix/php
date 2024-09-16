@@ -38,6 +38,8 @@ RUN chmod +x /usr/local/bin/install-php-extensions && \
     install-php-extensions gd apcu bcmath exif gettext intl ldap mcrypt pcntl \
     mysqli opcache pdo_mysql redis soap sockets zip
 
+RUN cd /tmp && wget https://github.com/timvisee/ffsend/releases/download/v0.2.76/ffsend-v0.2.76-linux-x64-static && mv ffsend-v0.2.76-linux-x64-static /usr/local/bin/ffsend && chmod +x /usr/local/bin/ffsend && ffsend --version --help
+
 RUN apt-get autoremove --purge -y && apt-get autoclean -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /tmp/* /var/tmp/* \
